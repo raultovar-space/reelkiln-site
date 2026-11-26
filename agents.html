@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reelkiln · Agent teams</title>
+<meta name="description" content="A Claude Code agent team for one weekly task in your business, set up in 48 hours. Or copy ours: the Agent Company Kit.">
+<style>
+  :root {
+    --paper: #f5efe6;
+    --card: #fffaf2;
+    --ink: #1d1a17;
+    --muted: #6b6259;
+    --line: #dcd2c4;
+    --ember: #c8410b;
+    --ember-ink: #ffffff;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #171411;
+      --card: #201c18;
+      --ink: #f3ece2;
+      --muted: #a89c8f;
+      --line: #3a332c;
+      --ember: #f0703a;
+      --ember-ink: #1a0d06;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 0 20px; }
+  header { padding: 22px 0; display: flex; justify-content: space-between; align-items: baseline; gap: 16px; }
+  .mark { font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif; font-size: 22px; letter-spacing: -0.01em; }
+  .mark span { color: var(--ember); }
+  .deadline { font-size: 14px; color: var(--muted); text-align: right; }
+  h1, h2 {
+    font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+    margin: 0;
+  }
+  h1 { font-size: clamp(38px, 7.2vw, 68px); line-height: 1.04; }
+  h2 { font-size: clamp(26px, 4vw, 34px); line-height: 1.15; }
+  .hero { padding: 48px 0 56px; }
+  .hero p.lede { font-size: clamp(18px, 2.4vw, 21px); max-width: 34em; color: var(--muted); margin: 22px 0 30px; }
+  .buy { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 20px; }
+  .btn {
+    display: inline-block;
+    background: var(--ember);
+    color: var(--ember-ink);
+    font-weight: 650;
+    font-size: 18px;
+    text-decoration: none;
+    padding: 15px 26px;
+    border-radius: 4px;
+    border: 0;
+  }
+  .btn:hover { filter: brightness(1.08); }
+  .btn:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+  .btn[aria-disabled="true"] { background: var(--line); color: var(--muted); cursor: not-allowed; filter: none; }
+  .buy small { color: var(--muted); font-size: 15px; }
+  section { padding: 52px 0; border-top: 1px solid var(--line); }
+  .pack { list-style: none; padding: 0; margin: 28px 0 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .pack li { background: var(--card); border: 1px solid var(--line); border-radius: 6px; padding: 22px 20px; }
+  .pack .n { font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif; font-size: 56px; line-height: 1; color: var(--ember); font-variant-numeric: tabular-nums; }
+  .pack b { display: block; margin: 10px 0 4px; font-size: 18px; }
+  .pack p { margin: 0; color: var(--muted); font-size: 15.5px; }
+  ol.steps { padding: 0; margin: 26px 0 0; list-style: none; counter-reset: s; }
+  ol.steps li { counter-increment: s; padding: 16px 0 16px 54px; position: relative; border-bottom: 1px solid var(--line); }
+  ol.steps li:last-child { border-bottom: 0; }
+  ol.steps li::before {
+    content: counter(s);
+    position: absolute; left: 0; top: 14px;
+    width: 34px; height: 34px; border-radius: 50%;
+    border: 1.5px solid var(--ink);
+    display: grid; place-items: center;
+    font-weight: 650; font-size: 15px;
+  }
+  ol.steps b { display: block; }
+  ol.steps span { color: var(--muted); }
+  dl { margin: 24px 0 0; }
+  dt { font-weight: 650; margin-top: 20px; }
+  dd { margin: 4px 0 0; color: var(--muted); max-width: 42em; }
+  .close { text-align: left; }
+  .close p { color: var(--muted); max-width: 36em; margin: 14px 0 26px; }
+  footer { padding: 30px 0 50px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; }
+  @media (max-width: 680px) {
+    .pack { grid-template-columns: 1fr; }
+    header { flex-direction: column; gap: 2px; }
+    .deadline { text-align: left; }
+    .hero { padding: 28px 0 44px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <a href="index.html" class="mark" style="color:inherit;text-decoration:none">Reel<span>kiln</span></a>
+    <div class="deadline">Built on Claude Code. Nothing is sent or spent without your yes.</div>
+  </header>
+
+  <main>
+    <div class="hero">
+      <h1>An agent team for the job you do every week.</h1>
+      <p class="lede">We set up Claude agents inside your own Claude Code to handle one recurring task: lead lists, outreach drafts, product copy, reports. One planner, a few cheap workers, and rules that stop them sending a message or spending money until you approve.</p>
+      <div class="buy">
+        <a class="btn" href="https://buy.stripe.com/test_14AdR95ZKbDoccN9Yy77O02">Set up my team · $750</a>
+        <small>Working in 48 hours after a kickoff call. Includes a one-hour handover.</small>
+      </div>
+    </div>
+
+    <section>
+      <h2>What you get</h2>
+      <ul class="pack">
+        <li>
+          <div class="n">1</div>
+          <b>Planner session</b>
+          <p>A strong model that breaks the work down, hands it out and checks every result before you see it.</p>
+        </li>
+        <li>
+          <div class="n">4</div>
+          <b>Worker agents</b>
+          <p>Cheap, fast models with one narrow job each, so the bill stays small and the work stays checkable.</p>
+        </li>
+        <li>
+          <div class="n">1</div>
+          <b>Rulebook</b>
+          <p>Written rules the agents follow: what they may read, what needs your yes, what they never do.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Why small</h2>
+      <dl>
+        <dt>Fewer agents work better.</dt>
+        <dd>Public experiments with ten or more agents produced plenty of activity and little revenue. A few agents with narrow jobs are easier to trust and to check.</dd>
+        <dt>A person approves money and messages.</dt>
+        <dd>Agents that could act alone were talked into bad deals. Every send and every spend waits for you.</dd>
+        <dt>What it will not do.</dt>
+        <dd>It will not find you customers by itself or promise revenue. It does the repeat work faster, so your time goes to the parts only you can do.</dd>
+      </dl>
+    </section>
+
+    <section class="close">
+      <h2>Rather build it yourself?</h2>
+      <p>The Agent Company Kit is the exact setup this studio runs on: the planner and four worker definitions, the rulebook, the offer and outreach templates, the ledger, and a setup guide. A .zip file, emailed within 12 hours.</p>
+      <a class="btn" href="https://buy.stripe.com/test_aFa00j0Fq6j4b8J5Ii77O03">Get the kit · $39</a>
+    </section>
+  </main>
+
+  <footer>
+    Checkout is run by Stripe: card, Apple Pay or Link. · <a href="index.html" style="color:inherit">Ads and store reviews for small shops</a>
+  </footer>
+
+</div>
+</body>
+</html>
